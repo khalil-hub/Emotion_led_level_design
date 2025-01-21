@@ -1,0 +1,35 @@
+@startuml
+class Player{
+    + jump()
+    + run()
+    + interact()
+    + collectItem()
+}
+
+class Level{
+    + start()
+    + end()
+    + generateObstacles()
+}
+
+class Obstacle{
+    + type
+    + interact()
+}
+
+class EmotionalFeedbackSystem{
+    + recordBehavior()
+    + analyzeFeedback()
+}
+
+class GameManager{
+    + loadLevel()
+    + updateScore()
+    + saveProgress()
+}
+
+Player --> Level : "Interacts"
+Level --> Obstacle : "Contains"
+Level --> GameManager : "Controlled By"
+GameManager --> EmotionalFeedbackSystem : "Sends Feedback"
+@enduml

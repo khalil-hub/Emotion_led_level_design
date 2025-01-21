@@ -1,0 +1,17 @@
+@startuml
+actor Player
+actor Gamemanager
+actor EmotionalFeedbackSystem as EFS
+actor GenerativeAISystem as GAIS
+
+usecase "Play Level" as UC1
+usecase "Provide Feedback" as UC2
+usecase "Adjust Level Design" as UC3
+
+Player --> UC1
+UC1 --> EFS : "Record Behavior"
+EFS --> UC2
+UC2 --> GAIS : "Analyze Feedback"
+GAIS --> UC3 : "Generate Adjusted Level"
+@enduml
+
